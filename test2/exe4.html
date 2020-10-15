@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    First<input type="number" id="one"><br>
+    second<input type="number" id="two"><br>
+    <input type="button" onclick="sum()" value="sum">
+    <script>
+        function sum(i,v)
+        {
+            i = document.getElementById("one").value;
+            v = document.getElementById("two").value;
+            let result = parseInt(i) + parseInt(v);
+            alert(result);
+        }
+
+    </script>
+
+</body>
+
+</html> 

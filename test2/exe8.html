@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title> exe8</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var comment = $.trim($("#comment").val());
+            if(comment != ""){
+                // Show alert dialog if value is not blank
+                alert(comment);
+            }
+        });
+        
+    });
+</script>
+</head>
+<body>
+    <textarea id="comment" rows="5" cols="50"></textarea>
+    <p><button type="button">Get Value</button></p>
+    <p><strong>Note:</strong> Type something in the textarea and click the button to see the result.</p>
+</body>
+</html>

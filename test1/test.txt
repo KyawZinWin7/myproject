@@ -1,0 +1,41 @@
+
+Q1
+SELECT name FROM staffs
+Q2
+SELECT DISTINCT deparment_id FROM staffs
+Q3
+SELECT * FROM `staffs` ORDER BY name ASC
+Q4
+SELECT staffs.name AS "Staff Name", departments.name AS "Departments Name" FROM staffs INNER JOIN departments ON departments.id = staffs.deparment_id ORDER BY staffs.name ASC , departments.name DESC
+Q5
+SELECT * FROM staffs WHERE name = "Kay Thwe" OR name = "Thae Su Wai"
+Q6
+SELECT * FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id AND departments.name = "Admin"
+
+Q7
+SELECT*FROM staffs WHERE name LIKE "%a%"
+Q8
+SELECT*FROM staffs WHERE name LIKE"%e"
+Q9
+SELECT*FROM staffs
+WHERE salary NOT BETWEEN '100000' AND '500000'
+Q10
+SELECT * FROM `staffs` WHERE joindate='2014-02-20'
+Q11
+SELECT COUNT(idno) AS total_admins FROM staffs WHERE deparment_id = 6
+Q12
+SELECT * FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id AND departments.name = "Manager"
+@13
+SELECT * FROM staffs LIMIT 3
+@14
+SELECT salary AS "three max-salaries" FROM `staffs` ORDER BY salary DESC LIMIT 3
+@15
+SELECT departments.id, departments.name,sum(staffs.salary)
+FROM departments  inner join staffs on departments.id= staffs.deparment_id
+GROUP BY departments.id,departments.name
+Q16
+SELECT * FROM staffs INNER JOIN bonus ON staffs.id = bonus.staff_id WHERE bonus.bonusdate LIKE "2016-02%"
+Q17
+SELECT * FROM staffs INNER JOIN bonus ON staffs.id = bonus.staff_id WHERE bonus.bonusdate LIKE "2016%" AND staffs.name = "Aye Aye";
+
+

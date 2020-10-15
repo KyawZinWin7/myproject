@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exe7</title>
+	<style type="text/css">
+		table{ margin-left: 450px; }
+
+	 	label#year{margin-left: 450px;font-size: 20px;}
+
+	    label#month{margin-left: 20px;font-size: 20px;}
+
+	    label#day{margin-left: 20px;font-size: 20px;}
+
+	    hr{width:400px;}
+	</style>
+	
+
+</head>
+<body>
+<center><h1>Calender</h1></center>
+<label id="year">year</label><label id="month">month</label><label id="day">month</label>
+<hr>	
+
+<table border="1" cellpadding="10px" id="table_id">
+	<colgroup>
+    <col span="1" style="background-color:pink">
+    <col span="5" style="background-color:gray">
+     <col span="1" style="background-color:pink">
+  </colgroup>
+	<tr>
+		<td>Sunday</td>
+		<td>Monday</td>
+		<td>Tuesday</td>
+		<td>Wednesday</td>
+		<td>Thursday</td>
+		<td>Friday</td>
+		<td>Saturday</td>
+	</tr>
+	
+</table>
+<script type="text/javascript">
+	var d = new Date();
+	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+   	
+   // var yearvalue=(d.getFullYear());
+   // var monthvalue=months[d.getMonth()];//string month
+   var yearvalue=(d.getFullYear());
+   var showyear=document.getElementById('year');
+   showyear.innerHTML=yearvalue;
+    
+   var monthvalue=months[d.getMonth()];
+   var showmonth=document.getElementById('month');
+   showmonth.innerHTML=monthvalue;
+
+   var today_num=d.getDate();// today date number	
+   var showday=document.getElementById('day');
+   showday.innerHTML=today_num;
+
+var fday= new Date(d.getFullYear(), d.getMonth(), 1);
+var fnum=fday.getDay();
+var lday=new Date(d.getFullYear(), d.getMonth() + 1, 0);
+var lnum=lday.getDate();
+
+var f=0;
+var times=0;
+var rownum=1;
+var first_day_table=1;
+ var table = document.getElementById("table_id");
+
+  for(var i=0;i<5;i++)
+  {
+  	var row = table.insertRow(rownum);
+    
+    if(times==0)
+    		{
+    		for( f;f<fnum;f++)
+    					 	{
+        	             		let cell1 = row.insertCell(f);
+      							cell1.innerHTML = "null";
+    						}
+    		times=1;
+			}
+    		for(f;f<7;f++)
+   							{
+  								let cell2 = row.insertCell(f);
+  								if(first_day_table<=lnum){
+
+     														cell2.innerHTML = first_day_table;
+     														//cell2.innerHTML="<style: color:green>" +first_day_table  + "</style>"
+     													}
+     						  first_day_table++;
+
+    						}
+    if(f==7)
+    		{
+    			f=0;
+    		}
+     rownum++;
+	}
+  
+	
+
+
+</script>
+
+
+</body>
+</html>

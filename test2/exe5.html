@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exe5</title>
+
+	<script type="text/javascript">
+
+		function cal() {
+			var win = document.getElementById("win_num").value;
+			var lose = document.getElementById("loss_num").value;
+			var draw = document.getElementById("draw_num").value;
+			var p_win = 3;
+			var p_lose =0;
+			var p_draw =1;
+			var total = '';
+			total = (p_win*win) + (p_lose*lose) + (p_draw*draw);
+			alert('You have '+ total +' Points now');
+		}
+	</script>
+</head>
+<body>
+	<label>Win No : </label>
+	<input type="text" name="win_num" id="w_num">
+	<br><br>
+	<label>Draw No : </label>
+	<input type="text" name="draw_num" id="d_num">
+	<br><br>
+	<label>Lost No : </label>
+	<input type="text" name="loss_num" id="l_num">
+	<br><br>
+	<button onclick="cal()">Cal Points</button>
+</body>
+
+</html>
